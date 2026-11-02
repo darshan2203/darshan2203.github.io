@@ -58,14 +58,20 @@ b, strong { font-weight: 600; }
   padding-left: max(24px, env(safe-area-inset-left, 0px));
   padding-right: max(24px, env(safe-area-inset-right, 0px));
   padding-block: 56px 40px;
+}
+/* Sidebar and content share this grid; the footer sits outside it, so the sticky sidebar stops before the footer. */
+.layout {
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr);
   gap: 64px;
   align-items: start;
 }
 
-/* Sidebar */
-.side { position: sticky; top: 40px; display: flex; flex-direction: column; gap: 20px; font-family: var(--font-sans); }
+/* Sidebar: stays in view while scrolling, but only on screens tall enough to show all of it */
+.side { display: flex; flex-direction: column; gap: 20px; font-family: var(--font-sans); }
+@media (min-width: 861px) and (min-height: 820px) {
+  .side { position: sticky; top: 40px; }
+}
 .id { display: flex; flex-direction: column; gap: 14px; }
 .id img { width: 176px; height: 176px; object-fit: cover; border-radius: 3px; display: block; }
 .id h1 { margin: 0; font-family: var(--font-serif); font-size: 1.625rem; font-weight: 600; line-height: 1.2; letter-spacing: -0.01em; }
@@ -143,12 +149,14 @@ section > h2 {
 
 .subhead { margin: 28px 0 0; font-family: var(--font-sans); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
 
-footer { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 22px; font-family: var(--font-sans); font-size: 0.8125rem; color: var(--faint); display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: space-between; }
+footer { margin-top: 56px; border-top: 1px solid var(--line); padding-top: 22px; font-family: var(--font-sans); font-size: 0.8125rem; color: var(--faint); display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: space-between; }
 
 /* Tablet and phone: sidebar becomes a header */
 @media (max-width: 860px) {
-  .page { grid-template-columns: minmax(0, 1fr); gap: 40px; padding-block: 32px 32px; }
-  .side { position: static; gap: 16px; }
+  .page { padding-block: 32px 32px; }
+  .layout { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  footer { margin-top: 40px; }
+  .side { gap: 16px; }
   .id { flex-direction: row; align-items: center; gap: 18px; }
   .id img { width: 96px; height: 96px; flex: none; }
   .jump { flex-direction: row; flex-wrap: wrap; gap: 4px 16px; }
