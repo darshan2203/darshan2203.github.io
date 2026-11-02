@@ -1,18 +1,48 @@
-/* CV page: same sidebar and tokens as the home page (style.css); this file only sets the denser CV body. */
+/* CV page: a single sheet on a quiet desk, so the web CV reads like the PDF. Tokens come from style.css. */
+:root { --desk: #eceef1; --sheet: #ffffff; --sheet-line: #dfe2e6; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --desk: #0b0e12; --sheet: #151a20; --sheet-line: #2a3038; }
+}
+:root[data-theme="dark"] { --desk: #0b0e12; --sheet: #151a20; --sheet-line: #2a3038; }
 
-.cv-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
-.cv-head h2 { margin: 0; font-family: var(--font-serif); font-size: 1.75rem; font-weight: 700; line-height: 1.2; text-transform: none; letter-spacing: 0; color: var(--fg); border: 0; padding: 0; }
-.cv-head .updated { margin: 4px 0 0; font-family: var(--font-sans); font-size: 0.875rem; color: var(--faint); }
-.btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans); font-size: 0.875rem; font-weight: 500; color: var(--accent); border: 1px solid var(--accent); border-radius: 4px; padding: 7px 14px; }
-.btn:hover { background: var(--accent); color: var(--bg); text-decoration: none; }
+body.cv { background: var(--desk); }
+.desk {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.back { font-family: var(--font-sans); font-size: 0.875rem; align-self: flex-start; }
+.sheet {
+  background: var(--sheet);
+  border: 1px solid var(--sheet-line);
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(20, 30, 45, 0.04), 0 8px 28px rgba(20, 30, 45, 0.06);
+  padding: 56px 64px 60px;
+}
+.cv-foot { font-family: var(--font-sans); font-size: 0.8125rem; color: var(--faint); text-align: center; border: 0; margin: 0; padding: 0; display: block; }
+
+/* Header: name, title, contact links, PDF button */
+.cv-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px 24px; padding-bottom: 16px; border-bottom: 2px solid var(--fg); }
+.cv-top h1 { margin: 0; font-family: var(--font-serif); font-size: 2.25rem; font-weight: 700; line-height: 1.1; letter-spacing: -0.01em; }
+.cv-role { margin: 8px 0 0; font-family: var(--font-sans); font-size: 1.0625rem; color: var(--fg); }
+.cv-links { margin: 8px 0 0; font-family: var(--font-sans); font-size: 0.9375rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; }
+.cv-links span { color: var(--faint); }
+.btn { flex: none; display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans); font-size: 0.875rem; font-weight: 500; color: var(--fg); background: var(--desk); border: 1px solid var(--sheet-line); border-radius: 4px; padding: 8px 16px; }
+.btn:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
 .btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
-.cv main { gap: 44px; }
-.cv .summary { margin: 20px 0 0; max-width: 70ch; font-size: 1.0625rem; line-height: 1.7; }
+.cv main { display: flex; flex-direction: column; gap: 36px; padding-top: 22px; }
+.cv section > h2 { color: var(--fg); font-weight: 600; }
+.cv .summary { margin: 0; font-size: 1.0625rem; line-height: 1.7; }
 
 /* An employer: name and place, dates on the right; titles held below */
-.job { padding-top: 20px; display: flex; flex-direction: column; gap: 6px; }
-.job + .job { margin-top: 14px; border-top: 1px solid var(--line); }
+.job { padding-top: 18px; display: flex; flex-direction: column; gap: 6px; }
+.job + .job { margin-top: 12px; border-top: 1px solid var(--line); }
 .job-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 16px; }
 .job-head h3 { margin: 0; font-size: 1.125rem; font-weight: 700; line-height: 1.4; }
 .job-head h3 span { font-weight: 400; color: var(--muted); font-size: 1rem; }
@@ -27,57 +57,58 @@
 .proj-head h4 { margin: 0; font-size: 1rem; font-weight: 700; line-height: 1.45; }
 .proj-head .when-inline { font-family: var(--font-sans); font-size: 0.8125rem; color: var(--faint); }
 .stack { font-family: var(--font-sans); font-size: 0.8125rem; color: var(--faint); line-height: 1.5; }
-.cv ul.points, .cv ol.points { margin: 2px 0 0; padding-left: 20px; display: flex; flex-direction: column; gap: 5px; font-size: 0.96875rem; line-height: 1.62; max-width: 72ch; }
+.cv ul.points, .cv ol.points { margin: 2px 0 0; padding-left: 20px; display: flex; flex-direction: column; gap: 5px; font-size: 0.96875rem; line-height: 1.62; }
 .cv ol.points { padding-left: 22px; }
 .cv .points li::marker { color: var(--faint); }
 
 /* Reference lists */
-.refs { list-style: none; margin: 0; padding: 16px 0 0; display: flex; flex-direction: column; gap: 14px; max-width: 74ch; font-size: 0.96875rem; line-height: 1.6; }
+.refs { list-style: none; margin: 0; padding: 16px 0 0; display: flex; flex-direction: column; gap: 14px; font-size: 0.96875rem; line-height: 1.6; }
 .refs .t { font-weight: 700; }
 .refs .me { font-weight: 700; }
 .refs .src { font-style: italic; }
 .refs .note { display: block; font-family: var(--font-sans); font-size: 0.8125rem; color: var(--faint); margin-top: 2px; }
 .cv .subhead { margin-top: 26px; }
 
-/* Education and other dated one-liners */
+/* Education */
 .lines { list-style: none; margin: 0; padding: 12px 0 0; display: flex; flex-direction: column; }
 .lines li { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 16px; padding-block: 9px; border-bottom: 1px solid var(--line); font-size: 0.96875rem; line-height: 1.55; }
 .lines li > span:first-child { min-width: 0; flex: 1 1 360px; }
 .lines .detail { display: block; font-family: var(--font-sans); font-size: 0.8125rem; color: var(--faint); }
 
-.skills { margin: 0; padding-top: 14px; display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 8px 20px; font-size: 0.96875rem; line-height: 1.6; }
+.skills { margin: 0; padding-top: 14px; display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 8px 20px; font-size: 0.96875rem; line-height: 1.6; }
 .skills dt { font-family: var(--font-sans); font-size: 0.875rem; font-weight: 500; color: var(--muted); padding-top: 2px; }
 .skills dd { margin: 0; }
 
+@media (max-width: 700px) {
+  .sheet { padding: 28px 20px 32px; }
+  .cv-top { flex-direction: column-reverse; }
+  .cv-top .btn { align-self: flex-end; }
+  .cv-top h1 { font-size: 1.75rem; }
+}
 @media (max-width: 560px) {
-  .skills { grid-template-columns: minmax(0, 1fr); gap: 0 0; }
+  .skills { grid-template-columns: minmax(0, 1fr); gap: 0; }
   .skills dd { margin-bottom: 10px; }
 }
 
-
-/* Shown only in the printed PDF, where the sidebar is hidden */
-.print-head { display: none; }
-
-/* PDF / print: one column, compact type, no sidebar or buttons. The PDF on the site is printed from this page. */
+/* PDF / print: the sheet alone, compact type. The PDF on the site is printed from this page. */
 @page { size: Letter; margin: 0.36in 0.5in 0.36in; }
 @media print {
-  :root { --bg: #ffffff; --fg: #111418; --muted: #3d4550; --faint: #555d68; --line: #d5d9de; --accent: #1d4f91; color-scheme: light; }
-  html, body { background: #ffffff; }
+  :root { --bg: #ffffff; --fg: #111418; --muted: #3d4550; --faint: #555d68; --line: #d5d9de; --accent: #1d4f91; --desk: #ffffff; --sheet: #ffffff; color-scheme: light; }
+  html, body, body.cv { background: #ffffff; }
   body { font-size: 9pt; line-height: 1.34; }
-  .side, .cv-head, footer { display: none !important; }
-  .page { max-width: none; padding: 0; }
-  .layout { display: block; }
-  .cv main { gap: 8pt; }
+  .back, .btn, .cv-foot { display: none !important; }
+  .desk { max-width: none; padding: 0; gap: 0; }
+  .sheet { border: 0; border-radius: 0; box-shadow: none; padding: 0; }
   a { color: var(--accent); text-decoration: none; }
 
-  .print-head { display: block; padding-bottom: 7pt; border-bottom: 1px solid var(--line); }
-  .print-head p { margin: 0; }
-  .ph-name { font-family: var(--font-serif); font-size: 19pt; font-weight: 700; line-height: 1.15; }
-  .ph-role { font-family: var(--font-sans); font-size: 9.5pt; color: var(--muted); margin-top: 2pt !important; }
-  .ph-links { font-family: var(--font-sans); font-size: 8.3pt; color: var(--muted); margin-top: 3pt !important; }
+  .cv-top { padding-bottom: 6pt; border-bottom-width: 1.2pt; }
+  .cv-top h1 { font-size: 19pt; }
+  .cv-role { font-size: 9.5pt; margin-top: 2pt; }
+  .cv-links { font-size: 8.6pt; margin-top: 2pt; gap: 0 6pt; }
 
-  .cv .summary { margin-top: 0; font-size: 9pt; line-height: 1.32; max-width: none; }
-  section > h2 { font-size: 8.4pt; padding-bottom: 2pt; margin-bottom: 0; letter-spacing: 0.12em; color: var(--accent); }
+  .cv main { gap: 8pt; padding-top: 7pt; }
+  .cv .summary { font-size: 9pt; line-height: 1.32; }
+  .cv section > h2 { font-size: 8.4pt; padding-bottom: 2pt; margin-bottom: 0; letter-spacing: 0.12em; color: var(--accent); }
   .job { padding-top: 4pt; gap: 1pt; }
   .job + .job { margin-top: 4pt; }
   .job-head h3 { font-size: 10.6pt; }
@@ -88,9 +119,9 @@
   .proj-head, .stack { break-after: avoid; }
   .proj-head h4 { font-size: 9.6pt; }
   .proj-head .when-inline, .stack { font-size: 7.9pt; }
-  .cv ul.points, .cv ol.points { font-size: 8.6pt; line-height: 1.25; gap: 0.8pt; max-width: none; padding-left: 13pt; margin-top: 0.5pt; }
+  .cv ul.points, .cv ol.points { font-size: 8.6pt; line-height: 1.25; gap: 0.8pt; padding-left: 13pt; margin-top: 0.5pt; }
   .cv .points li { break-inside: avoid; }
-  .refs { padding-top: 3pt; gap: 2pt; font-size: 8.6pt; line-height: 1.25; max-width: none; }
+  .refs { padding-top: 3pt; gap: 2pt; font-size: 8.6pt; line-height: 1.25; }
   .refs li { break-inside: avoid; }
   .refs .note { display: inline; font-size: 7.9pt; margin: 0 0 0 4pt; }
   .facts { font-size: 8.4pt; margin: 4pt 0 0; }
@@ -100,7 +131,6 @@
   .lines .detail { display: inline; font-size: 7.9pt; margin-left: 5pt; }
   .skills { padding-top: 3pt; grid-template-columns: 72pt minmax(0, 1fr); gap: 0.5pt 10pt; font-size: 8.6pt; line-height: 1.25; }
   .skills dt { font-size: 8.4pt; padding-top: 0; }
-  section { break-inside: auto; }
   h2, h3, h4, .job-head { break-after: avoid; }
   .titles { break-before: avoid; break-inside: avoid; }
 }
