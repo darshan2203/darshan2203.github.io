@@ -1,0 +1,28 @@
+# darshan2203.github.io
+
+Personal site of Darshan Sonagara, served by GitHub Pages at https://darshan2203.github.io.
+
+It is a plain static site. GitHub Pages serves these files as they are, with no build step to configure.
+
+## Files
+
+| Path | What it is |
+|---|---|
+| `index.html` | The whole page: sidebar, about, news, selected work, publications, talks, experience, education |
+| `assets/css/style.css` | All styling, including dark mode |
+| `assets/img/darshan.jpg` | Profile photo (480 × 480) |
+| `assets/cv/Darshan_Sonagara_CV.pdf` | The CV linked from the sidebar |
+
+## Common updates
+
+- **Citation count:** edit the line under the Publications heading in `index.html` (`331 citations on Google Scholar (Oct 2026)`). Update the per-paper counts in Publications and Selected work at the same time.
+- **News item:** copy one `<li class="row compact">` line at the top of the News list and edit the date and text. Move the oldest visible item into the "Earlier news" list when there are more than five.
+- **New paper:** copy one `<li class="pub">` block in Publications and edit it. Newest goes first.
+- **New project:** copy one `<article class="card">` block in Selected work.
+- **New CV:** replace `assets/cv/Darshan_Sonagara_CV.pdf`, keeping the same file name so links keep working.
+
+After editing, commit to `main`. The live site updates within a minute or two.
+
+## Keep consistent
+
+Titles, dates and numbers on this site must match the immigration petition materials and the CV. Do not add internal Target or Goldman Sachs metrics, system names or revenue figures. Describe the patent filing as a "provisional patent application".
