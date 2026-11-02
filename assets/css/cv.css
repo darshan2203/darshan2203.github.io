@@ -22,61 +22,63 @@ body.cv { background: var(--desk); }
   border: 1px solid var(--sheet-line);
   border-radius: 3px;
   box-shadow: 0 1px 2px rgba(20, 30, 45, 0.04), 0 8px 28px rgba(20, 30, 45, 0.06);
-  padding: 56px 64px 60px;
+  padding: 44px 52px 48px;
 }
 .cv-foot { font-family: var(--font-sans); font-size: 0.8125rem; color: var(--faint); text-align: center; border: 0; margin: 0; padding: 0; display: block; }
 
 /* Header: name, title, contact links, PDF button */
 .cv-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px 24px; padding-bottom: 16px; border-bottom: 2px solid var(--fg); }
-.cv-top h1 { margin: 0; font-family: var(--font-serif); font-size: 2.25rem; font-weight: 700; line-height: 1.1; letter-spacing: -0.01em; }
-.cv-role { margin: 8px 0 0; font-family: var(--font-sans); font-size: 1.0625rem; color: var(--fg); }
-.cv-links { margin: 8px 0 0; font-family: var(--font-sans); font-size: 0.9375rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; }
+.cv-top h1 { margin: 0; font-family: var(--font-serif); font-size: 1.75rem; font-weight: 700; line-height: 1.1; letter-spacing: -0.01em; }
+.cv-role { margin: 6px 0 0; font-family: var(--font-sans); font-size: 0.9375rem; color: var(--fg); }
+.cv-links { margin: 6px 0 0; font-family: var(--font-sans); font-size: 0.8125rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; }
 .cv-links span { color: var(--faint); }
 .btn { flex: none; display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-sans); font-size: 0.875rem; font-weight: 500; color: var(--fg); background: var(--desk); border: 1px solid var(--sheet-line); border-radius: 4px; padding: 8px 16px; }
 .btn:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
 .btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
-.cv main { display: flex; flex-direction: column; gap: 36px; padding-top: 22px; }
-.cv section > h2 { color: var(--fg); font-weight: 600; }
-.cv .summary { margin: 0; font-size: 1.0625rem; line-height: 1.7; }
+.cv main { display: flex; flex-direction: column; gap: 26px; padding-top: 18px; }
+.cv section > h2 { color: var(--fg); font-weight: 600; font-size: 0.75rem; padding-bottom: 10px; }
+.cv .facts { font-size: 0.8125rem; margin-top: 12px; }
+.cv .subhead { font-size: 0.6875rem; }
+.cv .summary { margin: 0; font-size: 0.90625rem; line-height: 1.62; }
 
 /* An employer: name and place, dates on the right; titles held below */
-.job { padding-top: 18px; display: flex; flex-direction: column; gap: 6px; }
+.job { padding-top: 16px; display: flex; flex-direction: column; gap: 6px; }
 .job + .job { margin-top: 12px; border-top: 1px solid var(--line); }
 .job-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 16px; }
-.job-head h3 { margin: 0; font-size: 1.125rem; font-weight: 700; line-height: 1.4; }
-.job-head h3 span { font-weight: 400; color: var(--muted); font-size: 1rem; }
-.dates { font-family: var(--font-sans); font-size: 0.875rem; color: var(--faint); white-space: nowrap; font-variant-numeric: tabular-nums; }
-.titles { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1px; font-family: var(--font-sans); font-size: 0.875rem; color: var(--muted); }
+.job-head h3 { margin: 0; font-size: 1rem; font-weight: 700; line-height: 1.4; }
+.job-head h3 span { font-weight: 400; color: var(--muted); font-size: 0.875rem; }
+.dates { font-family: var(--font-sans); font-size: 0.8125rem; color: var(--faint); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.titles { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1px; font-family: var(--font-sans); font-size: 0.8125rem; color: var(--muted); }
 .titles b { color: var(--fg); font-weight: 500; }
-.scope { margin: 4px 0 0; font-size: 1rem; line-height: 1.65; }
+.scope { margin: 4px 0 0; font-size: 0.875rem; line-height: 1.6; }
 
 /* A project inside an employer */
-.proj { margin-top: 12px; display: flex; flex-direction: column; gap: 4px; }
+.proj { margin-top: 10px; display: flex; flex-direction: column; gap: 4px; }
 .proj-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; }
-.proj-head h4 { margin: 0; font-size: 1rem; font-weight: 700; line-height: 1.45; }
-.proj-head .when-inline { font-family: var(--font-sans); font-size: 0.8125rem; color: var(--faint); }
-.stack { font-family: var(--font-sans); font-size: 0.8125rem; color: var(--faint); line-height: 1.5; }
-.cv ul.points, .cv ol.points { margin: 2px 0 0; padding-left: 20px; display: flex; flex-direction: column; gap: 5px; font-size: 0.96875rem; line-height: 1.62; }
+.proj-head h4 { margin: 0; font-size: 0.90625rem; font-weight: 700; line-height: 1.45; }
+.proj-head .when-inline { font-family: var(--font-sans); font-size: 0.75rem; color: var(--faint); }
+.stack { font-family: var(--font-sans); font-size: 0.75rem; color: var(--faint); line-height: 1.5; }
+.cv ul.points, .cv ol.points { margin: 2px 0 0; padding-left: 20px; display: flex; flex-direction: column; gap: 3px; font-size: 0.84375rem; line-height: 1.58; }
 .cv ol.points { padding-left: 22px; }
 .cv .points li::marker { color: var(--faint); }
 
 /* Reference lists */
-.refs { list-style: none; margin: 0; padding: 16px 0 0; display: flex; flex-direction: column; gap: 14px; font-size: 0.96875rem; line-height: 1.6; }
-.refs .t { font-weight: 700; }
-.refs .me { font-weight: 700; }
-.refs .src { font-style: italic; }
-.refs .note { display: block; font-family: var(--font-sans); font-size: 0.8125rem; color: var(--faint); margin-top: 2px; }
+.refs { list-style: none; margin: 0; padding: 12px 0 0; display: flex; flex-direction: column; gap: 11px; }
+.refs li { display: flex; flex-direction: column; gap: 1px; }
+.refs .t { font-size: 0.90625rem; font-weight: 700; line-height: 1.45; }
+.refs .cite { font-size: 0.84375rem; color: var(--muted); line-height: 1.5; }
+.refs .cite b { font-weight: 700; color: var(--fg); }
 .cv .subhead { margin-top: 26px; }
 
 /* Education */
 .lines { list-style: none; margin: 0; padding: 12px 0 0; display: flex; flex-direction: column; }
-.lines li { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 16px; padding-block: 9px; border-bottom: 1px solid var(--line); font-size: 0.96875rem; line-height: 1.55; }
+.lines li { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 16px; padding-block: 9px; border-bottom: 1px solid var(--line); font-size: 0.875rem; line-height: 1.55; }
 .lines li > span:first-child { min-width: 0; flex: 1 1 360px; }
-.lines .detail { display: block; font-family: var(--font-sans); font-size: 0.8125rem; color: var(--faint); }
+.lines .detail { display: block; font-family: var(--font-sans); font-size: 0.75rem; color: var(--faint); }
 
-.skills { margin: 0; padding-top: 14px; display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 8px 20px; font-size: 0.96875rem; line-height: 1.6; }
-.skills dt { font-family: var(--font-sans); font-size: 0.875rem; font-weight: 500; color: var(--muted); padding-top: 2px; }
+.skills { margin: 0; padding-top: 14px; display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 6px 18px; font-size: 0.84375rem; line-height: 1.58; }
+.skills dt { font-family: var(--font-sans); font-size: 0.8125rem; font-weight: 500; color: var(--muted); padding-top: 2px; }
 .skills dd { margin: 0; }
 
 @media (max-width: 700px) {
@@ -121,9 +123,10 @@ body.cv { background: var(--desk); }
   .proj-head .when-inline, .stack { font-size: 7.9pt; }
   .cv ul.points, .cv ol.points { font-size: 8.6pt; line-height: 1.25; gap: 0.8pt; padding-left: 13pt; margin-top: 0.5pt; }
   .cv .points li { break-inside: avoid; }
-  .refs { padding-top: 3pt; gap: 2pt; font-size: 8.6pt; line-height: 1.25; }
-  .refs li { break-inside: avoid; }
-  .refs .note { display: inline; font-size: 7.9pt; margin: 0 0 0 4pt; }
+  .refs { padding-top: 3pt; gap: 2.5pt; }
+  .refs li { break-inside: avoid; gap: 0; }
+  .refs .t { font-size: 8.7pt; line-height: 1.25; }
+  .refs .cite { font-size: 8.3pt; line-height: 1.25; }
   .facts { font-size: 8.4pt; margin: 4pt 0 0; }
   .cv .subhead { margin-top: 5pt; font-size: 7.6pt; }
   .lines { padding-top: 3pt; }
