@@ -39,7 +39,7 @@ body.cv { background: var(--desk); }
 .cv main { display: flex; flex-direction: column; gap: 26px; padding-top: 18px; }
 .cv section > h2 { color: var(--fg); font-weight: 600; font-size: 0.75rem; padding-bottom: 10px; }
 .cv .facts { font-size: 0.8125rem; margin-top: 12px; }
-.cv .subhead { font-size: 0.6875rem; }
+.cv .subhead { font-size: 0.75rem; font-weight: 600; color: var(--fg); }
 .cv .summary { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; font-size: 0.90625rem; line-height: 1.62; }
 .cv .summary li::marker { color: var(--faint); }
 
@@ -65,10 +65,10 @@ body.cv { background: var(--desk); }
 .cv .points li::marker { color: var(--faint); }
 
 /* Reference lists */
-.refs { list-style: none; margin: 0; padding: 12px 0 0; display: flex; flex-direction: column; gap: 11px; }
+.refs { list-style: none; margin: 0; padding: 12px 0 0; display: flex; flex-direction: column; gap: 14px; }
 .refs li { display: flex; flex-direction: column; gap: 1px; }
 .refs .t { font-size: 0.90625rem; font-weight: 700; line-height: 1.45; }
-.refs .cite { font-size: 0.84375rem; color: var(--muted); line-height: 1.5; }
+.refs .cite { font-size: 0.8125rem; color: var(--muted); line-height: 1.45; }
 .refs .cite b { font-weight: 700; color: var(--fg); }
 .cv .subhead { margin-top: 26px; }
 
@@ -124,12 +124,12 @@ body.cv { background: var(--desk); }
   .proj-head .when-inline, .stack { font-size: 7.9pt; }
   .cv ul.points, .cv ol.points { font-size: 8.6pt; line-height: 1.25; gap: 0.8pt; padding-left: 13pt; margin-top: 0.5pt; }
   .cv .points li { break-inside: avoid; }
-  .refs { padding-top: 3pt; gap: 2.5pt; }
+  .refs { padding-top: 3pt; gap: 5pt; }
   .refs li { break-inside: avoid; gap: 0; }
   .refs .t { font-size: 8.7pt; line-height: 1.25; }
-  .refs .cite { font-size: 8.3pt; line-height: 1.25; }
+  .refs .cite { font-size: 7.8pt; line-height: 1.2; }
   .facts { font-size: 8.4pt; margin: 4pt 0 0; }
-  .cv .subhead { margin-top: 5pt; font-size: 7.6pt; }
+  .cv .subhead { margin-top: 7pt; font-size: 8.2pt; font-weight: 700; color: var(--fg); }
   .lines { padding-top: 3pt; }
   .lines li { padding-block: 1.5pt; font-size: 8.6pt; line-height: 1.25; }
   .lines .detail { display: inline; font-size: 7.9pt; margin-left: 5pt; }
