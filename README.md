@@ -10,7 +10,8 @@ It is a plain static site. GitHub Pages serves these files as they are, with no 
 |---|---|
 | `index.html` | The whole page: sidebar, about, news, selected work, publications, talks, experience, education |
 | `assets/css/style.css` | All styling, including dark mode |
-| `assets/img/darshan.jpg` | Profile photo (480 × 480) |
+| `assets/img/darshan-portrait.jpg` | Sidebar photo (440 × 550 portrait) |
+| `assets/img/darshan.jpg` | Square photo used for link previews and search results |
 | `assets/cv/Darshan_Sonagara_CV.pdf` | The CV linked from the sidebar |
 
 ## Common updates
@@ -20,6 +21,8 @@ It is a plain static site. GitHub Pages serves these files as they are, with no 
 - **New paper:** copy one `<li class="pub">` block in Publications and edit it. Newest goes first.
 - **New project:** copy one `<article class="card">` block in Selected work.
 - **New CV:** replace `assets/cv/Darshan_Sonagara_CV.pdf`, keeping the same file name so links keep working.
+
+When you change `style.css`, also bump the `?v=` value on its link in `index.html`, so browsers load the new stylesheet.
 
 After editing, commit to `main`. The live site updates within a minute or two.
 

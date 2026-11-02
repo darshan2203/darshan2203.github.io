@@ -18,8 +18,8 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d4f91'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' font-weight='700' fill='white' text-anchor='middle'%3EDS%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap">
-<link rel="stylesheet" href="assets/css/style.css?v=2026-11-01">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&amp;family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Source+Serif+4:ital,opsz,wght@1,8..60,400&amp;display=swap">
+<link rel="stylesheet" href="assets/css/style.css?v=2026-11-02">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -53,7 +53,7 @@
 
   <aside class="side" aria-label="Profile">
     <div class="id">
-      <img src="assets/img/darshan.jpg" alt="Portrait of Darshan Sonagara" width="176" height="176">
+      <img src="assets/img/darshan-portrait.jpg" alt="Portrait of Darshan Sonagara" width="220" height="275">
       <div>
         <h1>Darshan Sonagara</h1>
         <p class="tagline">I build machine learning systems for search, information retrieval, recommendation, and trust and safety, serving millions of people every day.</p>
@@ -103,7 +103,7 @@
     <section id="news" aria-labelledby="news-title">
       <h2 id="news-title">News</h2>
       <ul class="rows">
-        <li class="row compact"><span class="when">Oct 2026</span><div class="what">Promoted to Lead Data Scientist, Search Retrieval at Target.</div></li>
+        <li class="row compact"><span class="when">Oct 2026</span><div class="what">Promoted to Lead Data Scientist at Target.</div></li>
         <li class="row compact"><span class="when">Sep 2026</span><div class="what"><span>Our paper <a href="https://arxiv.org/abs/2609.31498">Retail Product Search: A Practical Approach at Target</a> is now on arXiv.</span></div></li>
         <li class="row compact"><span class="when">Apr 2026</span><div class="what">Patent application filed on adaptive precision control and weighted result interleaving for hybrid product retrieval.</div></li>
         <li class="row compact"><span class="when">Sep 2025</span><div class="what"><span>Google Cloud <a href="https://cloud.google.com/blog/topics/retail/from-query-to-cart-inside-targets-search-bar-overhaul-with-alloydb-ai/">wrote about</a> the hybrid search system behind Target's search bar.</span></div></li>
@@ -126,13 +126,13 @@
       <div class="cards">
         <article class="card">
           <span class="meta">Target · 2024–2025</span>
-          <h3>Semantic and hybrid product search</h3>
+          <h3>Hybrid product search</h3>
           <p>Target's product search ran on keywords alone. I built its semantic channel from the ground up, from the embedding model and how it learns from what shoppers actually buy to the precision controls that keep results on target, and took it to production as a hybrid system alongside lexical search. It now serves every search on Target.com and the app: CTR +0.97%, conversion +0.98%, demand per visitor +1.10%, and about half as many searches that return nothing. Its embedding models are now used by Target's Ads, Content Understanding and Query Understanding teams as well.</p>
             <div class="links"><a href="https://arxiv.org/abs/2609.31498">Paper</a><a href="https://cloud.google.com/blog/topics/retail/from-query-to-cart-inside-targets-search-bar-overhaul-with-alloydb-ai/">Google Cloud write-up</a><span class="sub">Patent pending</span></div>
         </article>
         <article class="card">
           <span class="meta">Target · 2025–present</span>
-          <h3>LLM-based relevance labeling and precision control</h3>
+          <h3>Automated relevance labeling and precision control</h3>
           <p>A three-stage system for judging search relevance at scale. First, an automated labeling pipeline built on agentic frameworks and state-of-the-art LLMs produces a first-generation relevance dataset with reasoning for every label. Second, that reasoning data fine-tunes an in-house LLM specialized for relevance prediction. Third, the in-house model teaches a lightweight cross-encoder or shared bi-encoder student that runs at online inference time to control precision. Each stage trades accuracy, cost and latency differently, which is why all three exist.</p>
         </article>
         <article class="card">
@@ -212,32 +212,29 @@
         <li class="row">
           <span class="when">2023–now</span>
           <div class="what">
-            <h3>Target · Lead Data Scientist, Search Retrieval</h3>
-            <span class="sub">Lead Data Scientist since Oct 2026 · Senior Data Scientist, Apr 2023 – Oct 2026</span>
+            <h3 class="plain"><b>Target</b> · Lead Data Scientist</h3>
           </div>
           <span class="where">Minneapolis, MN</span>
         </li>
         <li class="row">
           <span class="when">2019–2023</span>
           <div class="what">
-            <h3>Goldman Sachs · Vice President</h3>
-            <span class="sub">Feb 2019 – Apr 2023 · enterprise search, knowledge graphs, real-time fraud detection · summer intern, 2018</span>
+            <h3 class="plain"><b>Goldman Sachs</b> · Vice President</h3>
           </div>
           <span class="where">New York, NY</span>
         </li>
         <li class="row">
           <span class="when">2017–2018</span>
           <div class="what">
-            <h3>Rutgers University · Research Assistant, Behavioral Informatics Lab</h3>
-            <span class="sub">Jun 2017 – Dec 2018 · NSF-funded cyberbullying detection research with Prof. Vivek K. Singh</span>
+            <h3 class="plain"><b>Rutgers University</b> · Research Assistant, Behavioral Informatics Lab</h3>
+            <span class="sub">NSF-funded cyberbullying detection research with Prof. Vivek K. Singh</span>
           </div>
           <span class="where">New Brunswick, NJ</span>
         </li>
         <li class="row">
           <span class="when">2015–2016</span>
           <div class="what">
-            <h3>Tata Consultancy Services · Assistant System Engineer</h3>
-            <span class="sub">Mar 2015 – Dec 2016 · big data migration and NLP</span>
+            <h3 class="plain"><b>Tata Consultancy Services</b> · Assistant System Engineer</h3>
           </div>
           <span class="where">Kolkata, India</span>
         </li>
@@ -246,25 +243,26 @@
       <ul class="rows">
         <li class="row">
           <span class="when">2019</span>
-          <div class="what"><h3>M.S. Computer Science · Rutgers University</h3></div>
+          <div class="what"><h3 class="plain"><b>M.S. Computer Science</b> · Rutgers University</h3></div>
           <span class="where">New Brunswick, NJ</span>
         </li>
         <li class="row">
           <span class="when">2015</span>
-          <div class="what"><h3>B.E. Information Technology · G H Patel College of Engineering &amp; Technology</h3></div>
+          <div class="what"><h3 class="plain"><b>B.E. Information Technology</b> · G H Patel College of Engineering &amp; Technology</h3></div>
           <span class="where">Anand, India</span>
         </li>
       </ul>
     </section>
 
+    <footer id="contact">
+      <span>© 2026 Darshan Sonagara</span>
+      <span>Last updated November 2026</span>
+    </footer>
+
   </main>
 
 </div>
 
-  <footer id="contact">
-    <span>© 2026 Darshan Sonagara</span>
-    <span>Last updated November 2026</span>
-  </footer>
 
 </div>
 
